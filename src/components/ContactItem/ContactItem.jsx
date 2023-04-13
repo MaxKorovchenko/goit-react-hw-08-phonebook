@@ -3,9 +3,8 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useRef } from 'react';
 
-import { deleteContact } from 'redux/operations';
-
 import { DeleteBtn, Info } from './ContactItem.styled';
+import { deleteContact } from 'redux/contacts/operations';
 
 export const ContactItem = ({ id, name, phone }) => {
   const dispatch = useDispatch();

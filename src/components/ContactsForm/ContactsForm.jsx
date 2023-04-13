@@ -4,9 +4,6 @@ import * as Yup from 'yup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { selectContacts } from 'redux/selectors';
-import { addContact } from 'redux/operations';
-
 import {
   Form,
   FormButton,
@@ -14,6 +11,8 @@ import {
   ErrorMessage,
   Field,
 } from './ContactsForm.styled';
+import { addContact } from 'redux/contacts/operations';
+import { selectContacts } from 'redux/contacts/selectors';
 
 const phoneRegex =
   /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
