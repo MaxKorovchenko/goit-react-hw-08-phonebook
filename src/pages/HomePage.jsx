@@ -1,4 +1,4 @@
-const Home = () => {
+const HomePage = () => {
   return (
     <main>
       <h1>Welcome to the PhoneBook APP</h1>
@@ -6,4 +6,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

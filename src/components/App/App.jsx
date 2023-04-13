@@ -13,11 +13,11 @@ import { Route, Routes } from 'react-router-dom';
 
 import { Layout } from 'components/Layout/Layout';
 
-const Home = lazy(() => import('../../pages/Home'));
-const Contacts = lazy(() => import('../../pages/Contacts'));
-const Login = lazy(() => import('../../pages/Login'));
-const Register = lazy(() => import('../../pages/Register'));
-const NotFound = lazy(() => import('../../pages/NotFound'));
+const HomePage = lazy(() => import('../../pages/HomePage'));
+const ContactsPage = lazy(() => import('../../pages/ContactsPage'));
+const LoginPage = lazy(() => import('../../pages/LoginPage'));
+const RegisterPage = lazy(() => import('../../pages/RegisterPage'));
+const NotFoundPage = lazy(() => import('../../pages/NotFoundPage'));
 
 //import { selectError, selectIsLoading } from 'redux/contacts/selectors';
 //import { fetchContacts } from 'redux/contacts/operations';
@@ -34,11 +34,11 @@ export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="contacts" element={<Contacts />} />
-        <Route path="login" element={<Login />} />
-        <Route path="register" element={<Register />} />
-        <Route path="*" element={<NotFound />} />
+        <Route index element={<HomePage />} />
+        <Route path="contacts" element={<ContactsPage />} />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
     // <Layout>

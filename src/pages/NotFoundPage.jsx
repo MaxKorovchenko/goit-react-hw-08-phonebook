@@ -1,4 +1,4 @@
-const NotFound = () => {
+const NotFoundPage = () => {
   return (
     <main>
       <h2 style={{ display: 'flex', justifyContent: 'center', fontSize: 40 }}>
@@ -8,4 +8,4 @@ const NotFound = () => {
   );
 };
 
-export default NotFound;
+export default NotFoundPage;
