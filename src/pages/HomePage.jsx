@@ -2,8 +2,11 @@ import phonebook from '../images/phonebook.jpg';
 
 const style = {
   main: {
+    //width: '100vw',
     height: '92vh',
     backgroundImage: `url(${phonebook})`,
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
   },
   title: {
     textAlign: 'center',
