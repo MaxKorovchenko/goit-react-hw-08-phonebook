@@ -15,8 +15,8 @@ export const DivModal = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  width: 500px;
-  height: 300px;
+  width: 700px;
+  height: 600px;
   padding: 40px;
   border-radius: 10px;
 

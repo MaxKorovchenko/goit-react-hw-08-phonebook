@@ -1,41 +1,53 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import { ContactsForm } from 'components/ContactsForm/ContactsForm';
 import { ContactsList } from 'components/ContactsList/ContactsList';
-
 import { Filter } from 'components/Filter/Filter';
-import { GlobalStyle } from 'components/GlobalStyle';
 
-import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
 import { fetchContacts } from 'redux/contacts/operations';
+import { selectError, selectIsLoading } from 'redux/contacts/selectors';
+
+const style = {
+  main: {
+    width: 700,
+    margin: '20px auto',
+    padding: 20,
+    backgroundColor: 'whitesmoke',
+    border: '2px solid grey',
+    boxShadow: '1px 1px 7px 1px grey',
+  },
+  mainTitle: {
+    fontSize: 40,
+    textTransform: 'uppercase',
+    textAlign: 'center',
+  },
+  title: {
+    fontSize: 30,
+    marginLeft: 40,
+    marginBottom: 30,
+  },
+};
 
 const ContactsPage = () => {
   const dispatch = useDispatch();
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
-    <main
-      style={{
-        width: 600,
-        display: 'flex',
-        flexDirection: 'column',
-        margin: '0 auto',
-      }}
-    >
-      {/* <Layout> */}
-      {/* <MainTitle>Phonebook</MainTitle> */}
+    <main style={style.main}>
+      <h2 style={style.mainTitle}>Phonebook</h2>
       <ContactsForm />
 
-      {/* <Title>Contacts</Title> */}
+      <h3 style={style.title}>Contacts</h3>
       <Filter />
-      {/* {isLoading && !error && <b>Request in progress...</b>}
-        {error && <b>{error}</b>} */}
+      {isLoading && !error && <b>Request in progress...</b>}
+      {error && <b>{error}</b>}
       <ContactsList />
-
-      <GlobalStyle />
-      {/* </Layout> */}
     </main>
   );
 };

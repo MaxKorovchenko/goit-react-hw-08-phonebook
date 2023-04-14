@@ -1,9 +1,18 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: rgb(69, 73, 78);
+  height: 70px;
+  box-shadow: 1px 5px 5px grey;
+  margin-bottom: 30px;
+`;
+
 export const Header = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 16px;
-  border-bottom: 1px solid #2a363b;
+  width: 800px;
+  margin: 0 auto;
 `;

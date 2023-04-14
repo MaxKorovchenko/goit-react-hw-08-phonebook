@@ -3,10 +3,11 @@ import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
 import { useRef, useState } from 'react';
 
-import { Btn, Info, Wrapper } from './ContactItem.styled';
 import { deleteContact } from 'redux/contacts/operations';
 import { Modal } from 'components/Modal/Modal';
 import { EditForm } from 'components/EditForm/EditForm';
+
+import { Btn, Info, Wrapper } from './ContactItem.styled';
 
 export const ContactItem = ({ id, name, number }) => {
   const [showModal, setShowModal] = useState(false);
