@@ -6,7 +6,6 @@ export const Container = styled.div`
   background-color: rgb(69, 73, 78);
   height: 70px;
   box-shadow: 1px 5px 5px grey;
-  margin-bottom: 30px;
 `;
 
 export const Header = styled.header`

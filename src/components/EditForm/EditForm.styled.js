@@ -21,6 +21,7 @@ export const StyledLabel = styled.label`
 
 export const Title = styled.h2`
   font-size: 40px;
+  margin: 20px;
   text-align: center;
   color: rgb(69, 73, 78);
 `;

@@ -12,6 +12,7 @@ export const Form = styled(FormikForm)`
   height: 300px;
   padding: 20px;
   border: 2px solid #485768;
+  background-color: lightgrey;
   border-radius: 6px;
   box-shadow: 2px 2px 6px 1px #485768;
 `;

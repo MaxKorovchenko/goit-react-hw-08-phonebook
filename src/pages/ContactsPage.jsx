@@ -15,10 +15,12 @@ const style = {
     padding: 20,
     backgroundColor: 'whitesmoke',
     border: '2px solid grey',
+    borderRadius: 10,
     boxShadow: '1px 1px 7px 1px grey',
   },
   mainTitle: {
-    fontSize: 40,
+    fontSize: 30,
+    color: ' rgb(69, 73, 78)',
     textTransform: 'uppercase',
     textAlign: 'center',
   },
@@ -26,6 +28,7 @@ const style = {
     fontSize: 30,
     marginLeft: 40,
     marginBottom: 30,
+    color: ' rgb(69, 73, 78)',
   },
 };
 
