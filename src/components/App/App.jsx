@@ -41,17 +41,5 @@ export const App = () => {
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
-    // <Layout>
-    //   <MainTitle>Phonebook</MainTitle>
-    //   <ContactsForm />
-
-    //   <Title>Contacts</Title>
-    //   <Filter />
-    //   {isLoading && !error && <b>Request in progress...</b>}
-    //   {error && <b>{error}</b>}
-    //   <ContactsList />
-
-    //   <GlobalStyle />
-    // </Layout>
   );
 };

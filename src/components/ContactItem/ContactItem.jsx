@@ -1,12 +1,15 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { toast } from 'react-toastify';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
-import { DeleteBtn, Info } from './ContactItem.styled';
+import { Btn, Info, Wrapper } from './ContactItem.styled';
 import { deleteContact } from 'redux/contacts/operations';
+import { Modal } from 'components/Modal/Modal';
+import { EditForm } from 'components/EditForm/EditForm';
 
-export const ContactItem = ({ id, name, phone }) => {
+export const ContactItem = ({ id, name, number }) => {
+  const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
   const btn = useRef();
 
@@ -17,12 +20,30 @@ export const ContactItem = ({ id, name, phone }) => {
     toast.info(`Сontact ${name} has been deleted`);
   };
 
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <Info>
-      {name}: {phone}
-      <DeleteBtn type="button" ref={btn} onClick={handleDelete}>
-        Delete
-      </DeleteBtn>
+      {name}: {number}
+      <Wrapper>
+        <Btn type="button" onClick={openModal}>
+          Edit
+        </Btn>
+        <Btn type="button" ref={btn} onClick={handleDelete}>
+          Delete
+        </Btn>
+      </Wrapper>
+      {showModal && (
+        <Modal close={closeModal}>
+          <EditForm id={id} close={closeModal} />
+        </Modal>
+      )}
     </Info>
   );
 };
@@ -30,5 +51,5 @@ export const ContactItem = ({ id, name, phone }) => {
 ContactItem.propTypes = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  phone: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
 };

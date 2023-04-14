@@ -1,17 +1,20 @@
 import styled from 'styled-components';
 
-export const Info = styled.p`
+export const Info = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 10px;
   font-size: 18px;
+  margin-bottom: 10px;
 `;
 
-export const DeleteBtn = styled.button`
+export const Wrapper = styled.div`
   display: flex;
-  gap: 5px;
-  margin-left: auto;
-  margin-right: 40px;
+  gap: 20px;
+`;
+
+export const Btn = styled.button`
   padding: 5px 10px;
   border: none;
   border-radius: 6px;
